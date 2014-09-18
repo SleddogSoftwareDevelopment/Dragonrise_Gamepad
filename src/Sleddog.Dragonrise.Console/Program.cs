@@ -1,4 +1,7 @@
-﻿namespace Sleddog.Dragonrise.Console
+﻿using System;
+using System.Diagnostics;
+
+namespace Sleddog.Dragonrise.Console
 {
     internal class Program
     {
@@ -6,7 +9,7 @@
         {
             var gamepad = new Gamepad();
 
-            gamepad.ReadInput();
+            gamepad.EventStream.Subscribe(e => { Debug.WriteLine(e); });
 
             System.Console.ReadLine();
         }
