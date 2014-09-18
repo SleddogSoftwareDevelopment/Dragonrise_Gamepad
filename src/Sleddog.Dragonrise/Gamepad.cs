@@ -73,12 +73,12 @@ namespace Sleddog.Dragonrise
         {
             var buttons = Button.None;
 
-            if (ab == A)
+            if ((ab & A) == A)
             {
                 buttons |= Button.A;
             }
 
-            if (ab == B)
+            if ((ab & B) == B)
             {
                 buttons |= Button.B;
             }
@@ -90,12 +90,12 @@ namespace Sleddog.Dragonrise
         {
             var buttons = Button.None;
 
-            if (xy == X)
+            if ((xy & X) == X)
             {
                 buttons |= Button.X;
             }
 
-            if (xy == Y)
+            if ((xy & Y) == Y)
             {
                 buttons |= Button.Y;
             }
@@ -107,12 +107,12 @@ namespace Sleddog.Dragonrise
         {
             var buttons = Button.None;
 
-            if (lr == L)
+            if ((lr & L) == L)
             {
                 buttons |= Button.L;
             }
 
-            if (lr == R)
+            if ((lr & R) == R)
             {
                 buttons |= Button.R;
             }
@@ -124,12 +124,12 @@ namespace Sleddog.Dragonrise
         {
             var buttons = Button.None;
 
-            if (startSelect == Start)
+            if ((startSelect & Start) == Start)
             {
                 buttons |= Button.Start;
             }
 
-            if (startSelect == Select)
+            if ((startSelect & Select) == Select)
             {
                 buttons |= Button.Select;
             }
@@ -141,12 +141,12 @@ namespace Sleddog.Dragonrise
         {
             var directions = Direction.None;
 
-            if (upDown == Up)
+            if ((upDown ^ Up) == Up)
             {
                 directions |= Direction.Up;
             }
 
-            if (upDown == Down)
+            if ((upDown & Down) == Down)
             {
                 directions |= Direction.Down;
             }
@@ -158,12 +158,12 @@ namespace Sleddog.Dragonrise
         {
             var directions = Direction.None;
 
-            if (leftRight == Left)
+            if ((leftRight ^ Left) == Left)
             {
                 directions |= Direction.Left;
             }
 
-            if (leftRight == Right)
+            if ((leftRight & Right) == Right)
             {
                 directions |= Direction.Right;
             }
